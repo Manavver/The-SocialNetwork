@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>The socialNetwork site</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    </head>
+    <body>
+      <div class="page-header">
+          <h1><a href="/">The socialNetwork Posts</a></h1>
+      </div>
+
+        <div>
+            <h1><a href="/"></a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+
+{% for Article in posts %}
+    <div>
+        <p>published: {{ Article.published_date }}</p>
+        <h1><a href="">{{ Article.title }}</a></h1>
+        <p>{{ Article.post|linebreaksbr }}</p>
+        <p>comments: {{ Article.comment|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
+</body>
+</html>
